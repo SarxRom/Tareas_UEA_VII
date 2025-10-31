@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuerpo en JSON</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ 
+    <h1>Tu cuerpo en json</h1>
+    <h2>Debe:</h2>
+
+    <div>
+        <p id="nota"></p>
+    </div>
+
+    <script>
+        fetch('doc1.json')
+            .then( response => response.json())
+            .then(json => {
+                document.getElementById("nota").innerHTML = json.accion[4] +" " + json.partescuerpo[4] + " " + json.lados[1];
+            })
+    </script>
+
+</body>
+</html>

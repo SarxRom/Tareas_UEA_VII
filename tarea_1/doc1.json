@@ -1,0 +1,5 @@
+{
+    "partescuerpo": ["rodilla", "mano", "pie", "codo", "cuello"],
+    "accion": ["doblar", "estirar", "girar", "cerrar", "levantar"],
+    "lados": ["izquierda", "derecha","abajo","arriba"]
+}
