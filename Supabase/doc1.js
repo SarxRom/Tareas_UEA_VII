@@ -1,0 +1,3 @@
+const ahhh = supabase.createClient('https://qgbcwqvbkwedjgigqmul.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFnYmN3cXZia3dlZGpnaWdxbXVsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjE5MDI2MDAsImV4cCI6MjA3NzQ3ODYwMH0.0ZOLoRBYr3GQlunZGxt4coy4O0GK5s85r4rsOx8tIO4' )
+
+console.log(ahhh)
