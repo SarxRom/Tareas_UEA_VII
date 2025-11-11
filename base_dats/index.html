@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+</head>
+<body>
+
+    <h1> SENTIMENTAL </h1>
+    <p id="semana"></p>
+    <br>
+    <div id="imageContainer"></div>
+    <script>
+        const namuClient = supabase.createClient('https://qgbcwqvbkwedjgigqmul.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFnYmN3cXZia3dlZGpnaWdxbXVsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjE5MDI2MDAsImV4cCI6MjA3NzQ3ODYwMH0.0ZOLoRBYr3GQlunZGxt4coy4O0GK5s85r4rsOx8tIO4', {
+            db: {schema:"public"}
+        });
+        
+        //Codigo para llamar base de datos (texto)
+       (async () => {
+            const response = await namuClient.from("Colectivo").select("Lunes")
+            console.log(response.data[0].Lunes)
+            
+            document.getElementById("semana").innerHTML = response.data[4].Lunes;
+        
+            //Codigo para llamar fotos 
+            const response4 = await namuClient.storage.from("Fotos").getPublicUrl("flo.jpg") 
+            console.log(response4.data.publicUrl)
+
+            const imgElement = document.createElement('img')
+            imgElement.src = response4.data.publicUrl
+            imgElement.width = 400
+            document.getElementById('imageContainer').appendChild(imgElement)
+        })()
+
+    </script>
+</body>
+</html>
